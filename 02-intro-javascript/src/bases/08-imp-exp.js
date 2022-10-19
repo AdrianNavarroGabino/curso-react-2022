@@ -2,7 +2,7 @@ import heroes, { owners } from '../data/heroes';
 
 console.log(owners);
 
-const getHeroeById = id => heroes.find(heroe => heroe.id == id);
+export const getHeroeById = id => heroes.find(heroe => heroe.id == id);
 
 console.log(getHeroeById(1));
 
