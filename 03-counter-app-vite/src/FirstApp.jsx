@@ -5,13 +5,13 @@ const newMessage = {
 
 const getResult = (a, b) => a + b;
 
-export const FirstApp = () => {
+export const FirstApp = ({title, subtitle}) => {
     return (
         <>
-            <h1>Hola, mundo</h1>
+            <h1>{title}</h1>
             <code>{JSON.stringify(newMessage)}</code>
             <p>{getResult(3, 6)}</p>
-            <p>Soy un subtítulo</p>
+            <p>Soy un subtítulo: {subtitle + 1}</p>
         </>
     );
 }
