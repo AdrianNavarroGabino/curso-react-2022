@@ -5,14 +5,14 @@ import { FirstApp } from "../src/FirstApp";
 describe('Pruebas en <FirstApp />', () => {
     test('Debe hacer match con el snapshot', () => {
         const title = 'Hola, soy Vegeta';
-        const { container } = render(<FirstApp title={title} />);
+        const { container } = render(<FirstApp title={title} subtitle="subtitulo" />);
 
         expect(container).toMatchSnapshot();
     });
 
     test('Debe mostrar el título', () => {
         const title = 'Hola, soy Vegeta';
-        const { container, getByText, getByTestId } = render(<FirstApp title={title} />);
+        const { container, getByText, getByTestId } = render(<FirstApp title={title} subtitle="subtitulo" />);
 
         expect(getByText(title)).toBeTruthy();
 
