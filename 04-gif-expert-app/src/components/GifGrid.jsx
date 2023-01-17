@@ -3,16 +3,18 @@ import { getGifs } from "../helpers/getGifs"
 
 
 export const GifGrid = ({ category }) => {
-    const [gifs, setGifs] = useState([])
+    const [images, setImages] = useState([])
 
     useEffect(() => {
-        getGifs(category).then(console.log)
+        getGifs(category).then(setImages);
     }, []);
 
     return (
         <div key={category}>
             <h3>{category}</h3>
-            <li>{category}</li>
+            <ol>
+                {images.map(({ id, title, url }) => <li key={id}>{title}</li>)}
+            </ol>
         </div>
     )
 }
