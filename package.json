@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "prop-types": "^15.8.1"
+    "prop-types": "^15.8.1",
+    "query-string": "^8.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
