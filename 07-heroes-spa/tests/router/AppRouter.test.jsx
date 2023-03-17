@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { AuthContext } from '../../src/auth';
 import { AppRouter } from '../../src/router/AppRouter';
+import { Navbar } from '../../src/ui';
 
 describe('Pruebas en <AppRouter />', () => {
     test('Debe mostrar el login si no está autenticado', () => {
@@ -30,13 +31,12 @@ describe('Pruebas en <AppRouter />', () => {
         };
 
         render(
-            <MemoryRouter initialEntries={ ['/login'] }>
-                <AuthContext.Provider value={ { contextValue } }>
-                    <AppRouter />
-                </AuthContext.Provider>
-            </MemoryRouter>
+            <AuthContext.Provider value={ contextValue }>
+                <MemoryRouter>
+                    <Navbar />
+                </MemoryRouter>
+            </AuthContext.Provider>
         );
-        screen.debug();
 
         expect(screen.getAllByText('Marvel').length).toBeGreaterThanOrEqual(1);
     });
