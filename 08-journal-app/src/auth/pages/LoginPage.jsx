@@ -18,12 +18,11 @@ export const LoginPage = () => {
         event.preventDefault();
 
         console.log({ email, password });
-        dispatch(checkingAuthentication);
+        dispatch(checkingAuthentication());
     }
 
     const onGoogleSignIn = () => {
-        console.log('onGogleSignIn');
-        dispatch(startGoogleSignIn);
+        dispatch(startGoogleSignIn());
     }
 
     return (
