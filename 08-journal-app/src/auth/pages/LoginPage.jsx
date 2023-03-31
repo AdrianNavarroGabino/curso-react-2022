@@ -10,7 +10,7 @@ import { checkingAuthentication, startGoogleSignIn } from '../../store/auth';
 export const LoginPage = () => {
     const { status } = useSelector(state => state.auth);
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const { email, password, onInputChange } = useForm({
         email: 'adrian@google.com',
