@@ -45,7 +45,7 @@ export const RegisterPage = () => {
             return;
         }
 
-        dispatch(startCreatingUserWithEmailPassword);
+        dispatch(startCreatingUserWithEmailPassword({ email, password, displayName }));
     }
 
     return (
