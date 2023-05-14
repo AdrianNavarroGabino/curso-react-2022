@@ -1,10 +1,16 @@
 import { Box, Divider, Drawer, List, Toolbar, Typography } from '@mui/material';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { SideBarItem } from '.';
+import { setActiveNote } from '../../store/journal';
 
 export const SideBar = ({ drawerWidth = 240 }) => {
     const { displayName } = useSelector(state => state.auth);
     const { notes } = useSelector(state => state.journal);
+    const dispatch = useDispatch();
+
+    const handleNoteClick = (note) => {
+        dispatch(setActiveNote(note));
+    }
 
     return (
         <Box
@@ -29,7 +35,7 @@ export const SideBar = ({ drawerWidth = 240 }) => {
                 <List>
                     {
                         notes.map(note => (
-                            <SideBarItem key={note.id} {...note} />
+                            <SideBarItem key={note.id} {...note} setActive={() => handleNoteClick(note)}/>
                         ))
                     }
                 </List>
